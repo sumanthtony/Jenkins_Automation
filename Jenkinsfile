@@ -1,35 +1,30 @@
 pipeline {
     agent any
 
-    environment {
-        IMAGE_NAME = "netflix"
-        DOCKER_REGISTRY = "docker.io/shaikmustafa"
-    }
-
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/your-repo/app.git'
+                git 'https://github.com/sumanthtony/Jenkins_Automation.git'
             }
         }
 
         stage('Build') {
             steps {
-                sh 'docker build -t $IMAGE_NAME .'
+                sh 'docker build -t image1 .'
             }
         }
 
         stage('Test') {
             steps {
-                sh 'docker run --rm $IMAGE_NAME npm test' // Adjust for your app
+                sh 'docker run --rm npm test' // Adjust for your app
             }
         }
 
         stage('Deploy') {
             steps {
-                withDockerRegistry([credentialsId: 'docker-creds', url: '']) {
-                    sh 'docker tag $IMAGE_NAME $DOCKER_REGISTRY/$IMAGE_NAME:latest'
-                    sh 'docker push $DOCKER_REGISTRY/$IMAGE_NAME:latest'
+                withDockerRegistry([credentialsId: 'Docker-id', url: 'https://index.docker.io/v1/']) {
+                    sh 'docker tag image1 sumanthtony/devops:demoimg'
+                    sh 'docker push sumanthtony/devops:demoimg'
                 }
             }
         }
