@@ -2,8 +2,8 @@ pipeline {
     agent any
 
     environment {
-        IMAGE_NAME = "myapp"
-        DOCKER_REGISTRY = "docker.io/yourusername"
+        IMAGE_NAME = "netflix"
+        DOCKER_REGISTRY = "docker.io/shaikmustafa"
     }
 
     stages {
