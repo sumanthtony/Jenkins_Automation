@@ -11,7 +11,7 @@ Following steps taken to complete the task:
 
 <img width="608" height="217" alt="Jenkins_setup" src="https://github.com/user-attachments/assets/e16fff8c-74ce-4949-ae10-3120d7261344" />
 
-**--->** Created a **web-hook trigger** for the repository and used in Jenkins pipeline that when ever the **commit is changed**, automatically in **Jenkins job** build is triggered and all the pipeline steps will be built.
+**--->** Created a **web-hook trigger** for the repository and used in Jenkins pipeline that when ever any **new commits** are made automatically in **Jenkins job** build is triggered and all the pipeline steps will be built.
 
 <img width="593" height="149" alt="Placed webhook in github" src="https://github.com/user-attachments/assets/e1f17374-b99d-401d-be8c-88230ade0b2f" />
 
